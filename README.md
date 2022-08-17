@@ -124,11 +124,11 @@ file to create a new filetype and assign the s-asm.vim syntax file to the newly
 created filetype. Here are the steps:
 
 If you have used a plugin manager previously, there is likely this folder 
-~/.vim/bundle. If not, follow the below cmdsm; if so, skip cmd1
+~/.vim/bundle. If not, follow the below cmds; if so, skip cmd1
 ```
 $ mkdir ~/.vim/bundle &&
-$ cd ~/.vim/bundle &&
-$ git clone git@github.com:akielaries/vim-s-asm.git
+cd ~/.vim/bundle &&
+git clone git@github.com:akielaries/vim-s-asm.git
 ```
 If your ASM files automatically recognize s-asm.vim as the default syntax file,
 great, if not, add the following to your ~/.vimrc file.
@@ -151,7 +151,6 @@ for ASM files!
 # Manual Installation Method 2
 Download gas.vim and copy the file to .vim/syntax/ in your home folder. 
 Add this line to the end of your file: 
-
 ```vim
 /* vim: ft=gas : 
 */ 
