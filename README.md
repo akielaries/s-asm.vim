@@ -1,4 +1,10 @@
-# VIM-GAS
+# vim-s-asm
+This repo is heavily based on Shirk/vim-gas. The .vim syntax file in this repo
+contains essentially the same funcionality as the original gas.vim file but
+with added instructions and edited syntax supporting GNU Assembly files. This
+started with a Operating Systems project create a kernel entry point but with
+the lack of syntax support for .S assembly files was troublesome. This repo 
+aims to fix some of the similar issues you may have run into!
 
 This vim bundle adds advanced syntax highlighting for GNU as (AT&T).
 
@@ -133,7 +139,14 @@ if has("autocmd")
     autocmd! Syntax s-asm source ~/.vim/bundle/akielaries/vim-s-asm/syntax/s-asm.vim
 endif " has("autocmd")"
 ```
-
+Finally reload your .vimrc file 
+(from within your .vimrc file type:)
+```
+:source %
+```
+And this should enable the syntax on all .S files.
+There will be more changes to include setting this syntax file as the default
+for ASM files!
 # Manual Installation Method 2
 Download gas.vim and copy the file to .vim/syntax/ in your home folder. 
 Add this line to the end of your file: 
