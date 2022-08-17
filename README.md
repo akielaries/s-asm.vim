@@ -90,7 +90,7 @@ I hope this syntax file will be useful to other people
 
 ## CPP preprocessor macros
 
-GAS allows code to be processed by the same preprocessor used for C/C++ code. 
+GAS allows code to be processed by the same preprocessor used for C,C++ code. 
 So directives like `#include`, `#define` etc. will be highlighted using the C 
 syntax highlighter if available. 
 
@@ -110,8 +110,17 @@ let gasDisablePreproc=1
 
 This syntax file can either be installed manually, by using pathogen or vundle.
 
-### Manual Installation
+### My Manual Installation Method
 
+
+```
+mkdir ~/.vim/bundle &&
+cd ~/.vim/bundle &&
+git clone git@github.com:akielaries/vim-s-asm.git
+
+```
+
+# Manual Installation Method 2
 Download gas.vim and copy the file to .vim/syntax/ in your home folder. 
 Add this line to the end of your file: 
 
