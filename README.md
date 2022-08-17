@@ -1,14 +1,15 @@
-# vim-s-asm
-This repo is heavily based on Shirk/vim-gas. The .vim syntax file in this repo
-contains essentially the same funcionality as the original gas.vim file but
-with added instructions and edited syntax supporting GNU Assembly files. This
-started with a Operating Systems project create a kernel entry point but with
-the lack of syntax support for .S assembly files was troublesome. This repo 
-aims to fix some of the similar issues you may have run into!
+# vim-s-asm (currently in development)
+This repo is heavily based on Shirk/vim-gas and is forked from such project.
+The .vim syntax file in this repo contains essentially the same funcionality 
+as the original gas.vim file but with added instructions and edited syntax 
+supporting GNU Assembly files. 
+This started with a Operating Systems project create a kernel entry point 
+but with the lack of syntax support for .S assembly files was troublesome. 
+This repo aims to fix some of the similar issues you may run into!
 
 This vim bundle adds advanced syntax highlighting for GNU as (AT&T).
 
-This file defines a (almost) complete syntax for GNU as assembler. 
+This file defines an (almost) complete syntax for GNU as assembler. 
 
 My motivation in writing this was the lack of a complete, working syntax for this 
 common assembler. 
@@ -125,9 +126,9 @@ created filetype. Here are the steps:
 If you have used a plugin manager previously, there is likely this folder 
 ~/.vim/bundle. If not, follow the below cmdsm; if so, skip cmd1
 ```
-mkdir ~/.vim/bundle &&
-cd ~/.vim/bundle &&
-git clone git@github.com:akielaries/vim-s-asm.git
+$ mkdir ~/.vim/bundle &&
+$ cd ~/.vim/bundle &&
+$ git clone git@github.com:akielaries/vim-s-asm.git
 ```
 If your ASM files automatically recognize s-asm.vim as the default syntax file,
 great, if not, add the following to your ~/.vimrc file.
