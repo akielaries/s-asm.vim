@@ -47,7 +47,7 @@ Opcodes supporting a size suffix are recognized plain as well as suffixed with b
 - VIA (Centaur) security instructions 
 - AMD XOP, FMA4 and CVT16 instructions (SSE5) 
 - Systematic names for the hinting nop instructions 
-- ARM (Thumb)
+- ARM (Thumb) + updated instructions
 - AVR
 
 You can set different highlighting for each set listed above by adding a line like this to you .vimrc: 
