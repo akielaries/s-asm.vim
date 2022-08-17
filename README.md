@@ -111,13 +111,27 @@ let gasDisablePreproc=1
 This syntax file can either be installed manually, by using pathogen or vundle.
 
 ### My Manual Installation Method
+I was running into issues with my ASM files recognizing the s-asm.vim syntax
+file. A hackjob was done in order to force this to work. I edited the ~/.vimrc
+file to create a new filetype and assign the s-asm.vim syntax file to the newly
+created filetype. Here are the steps:
 
-
+If you have used a plugin manager previously, there is likely this folder 
+~/.vim/bundle. If not, follow the below cmdsm; if so, skip cmd1
 ```
 mkdir ~/.vim/bundle &&
 cd ~/.vim/bundle &&
 git clone git@github.com:akielaries/vim-s-asm.git
-
+```
+If your ASM files automatically recognize s-asm.vim as the default syntax file,
+great, if not, add the following to your ~/.vimrc file.
+```
+if has("autocmd")
+    " this sets files with .S extension to new filetype on creation and read
+    autocmd BufNewFile,BufRead *.S set filetype=s-asm
+    " points s-asm.vim syntax file as default for newly created filetype
+    autocmd! Syntax s-asm source ~/.vim/bundle/akielaries/vim-s-asm/syntax/s-asm.vim
+endif " has("autocmd")"
 ```
 
 # Manual Installation Method 2
