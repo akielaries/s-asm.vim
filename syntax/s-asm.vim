@@ -87,8 +87,11 @@ syn match   gasLocalLabel	/\d\{1,2\}[:fb]/
 syn match   gasOperator		/[+-/*=|&~<>]\|<=\|>=\|<>/
 syn match   gasTODO		/\<\(TODO\|FIXME\|NOTE\)\>/ contained
 syn region  gasComment		start=/\/\*/ end=/\*\// contains=gasTODO
+
 "syn region  gasCommentSingle    start=/#/ end=/$/ contains=gasTODO
+"sets // to a proper comment
 syn region  gasCommentSingle    start=/\/\// end=/$/ contains=gasTODO
+
 syn region  gasCommentSingle    start=/@/ end=/$/ contains=gasTODO
 if exists('g:gasCppComments')
 	syn region  gasCommentSingle start=/\/\// end=/$/ contains=gasTODO
@@ -1936,6 +1939,8 @@ syn keyword gasOpcode_ARM_THUMB         subge sublt subgt suble subal
 syn keyword gasOpcode_ARM_THUMB         tst tsteq tstne tstcs tsths tstcc tstlo
 syn keyword gasOpcode_ARM_THUMB         tstmi tstpl tstvs tstvc tsthi tstls
 syn keyword gasOpcode_ARM_THUMB         tstge tstlt tstgt tstle tstal
+syn keyword gasOpcode_ARM_THUMB         mrc MRCEQ MRCNE MRCCS MRCHS MRCCC MRCLO
+
 
 "-- Section: AVR
 syn keyword gasOpcode_AVR       adc add adiw and andi asr
