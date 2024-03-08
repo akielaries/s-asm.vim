@@ -19,7 +19,7 @@ Opcodes supporting a size suffix are recognized plain as well as suffixed with b
 
 ## What does it look like?
 
-![screenshot here..](https://raw.githubusercontent.com/Shirk/vim-gas/master/sample.png)
+![screenshot here..](https://raw.githubusercontent.com/akielaries/vim-gas/master/sample.png)
 
 ## Supported instructions a per version 0.16: 
 

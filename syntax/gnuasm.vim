@@ -87,12 +87,9 @@ syn match   gasLocalLabel	/\d\{1,2\}[:fb]/
 syn match   gasOperator		/[+-/*=|&~<>]\|<=\|>=\|<>/
 syn match   gasTODO		/\<\(TODO\|FIXME\|NOTE\)\>/ contained
 syn region  gasComment		start=/\/\*/ end=/\*\// contains=gasTODO
-
-"syn region  gasCommentSingle    start=/#/ end=/$/ contains=gasTODO
-"sets // to a proper comment
+syn region  gasCommentSingle    start=/;/ end=/$/ contains=gasTODO
 syn region  gasCommentSingle    start=/\/\// end=/$/ contains=gasTODO
-
-syn region  gasCommentSingle    start=/@/ end=/$/ contains=gasTODO
+"syn region  gasCommentSingle    start=/@/ end=/$/ contains=gasTODO
 if exists('g:gasCppComments')
 	syn region  gasCommentSingle start=/\/\// end=/$/ contains=gasTODO
 endif
@@ -1311,7 +1308,7 @@ syn keyword gasOpcode_X64_SSE		movmskps
 syn keyword gasOpcode_KATMAI_SSE	movntps movntpsb movntpsw movntpsl movntpsq
 syn keyword gasOpcode_KATMAI_SSE	movss
 syn keyword gasOpcode_KATMAI_SSE	movups
-syn keyword gasOpcode_KATMAI_SSE	mulps mulpsb mulpsw mulpsl mulpsq
+syn keyword gasOpcode_KATMAI_SSE	mulps mulpd mulpsb mulpsw mulpsl mulpsq
 syn keyword gasOpcode_KATMAI_SSE	mulss mulssb mulssw mulssl mulssq
 syn keyword gasOpcode_KATMAI_SSE	orps orpsb orpsw orpsl orpsq
 syn keyword gasOpcode_KATMAI_SSE	rcpps rcppsb rcppsw rcppsl rcppsq
@@ -1939,8 +1936,6 @@ syn keyword gasOpcode_ARM_THUMB         subge sublt subgt suble subal
 syn keyword gasOpcode_ARM_THUMB         tst tsteq tstne tstcs tsths tstcc tstlo
 syn keyword gasOpcode_ARM_THUMB         tstmi tstpl tstvs tstvc tsthi tstls
 syn keyword gasOpcode_ARM_THUMB         tstge tstlt tstgt tstle tstal
-syn keyword gasOpcode_ARM_THUMB         mrc MRCEQ MRCNE MRCCS MRCHS MRCCC MRCLO
-
 
 "-- Section: AVR
 syn keyword gasOpcode_AVR       adc add adiw and andi asr
@@ -2050,10 +2045,12 @@ call <SID>MapOpcode('gasOpcode_X64_Base'       , 'x64'        , 'base')
 call <SID>MapOpcode('gasOpcode_X64_MMX'        , 'x64'        , 'mmx')
 call <SID>MapOpcode('gasOpcode_X64_SSE'        , 'x64'        , 'sse')
 call <SID>MapOpcode('gasOpcode_X64_SSE2'       , 'x64'        , 'sse2')
+call <SID>MapOpcode('gasOpcode_SSE2'           , 'x64'        , 'sse2')
 call <SID>MapOpcode('gasOpcode_X64_SSE41'      , 'x64'        , 'sse4.1')
 call <SID>MapOpcode('gasOpcode_X64_SSE42'      , 'x64'        , 'sse4.2')
 call <SID>MapOpcode('gasOpcode_X64_VMX'        , 'x64'        , 'vmx')
 call <SID>MapOpcode('gasOpcode_X86_64_Base'    , 'x64'        , 'base')
+call <SID>MapOpcode('gasOpcode_Base'   	       , 'x64'        , 'base')
 
 " support CPP preprocessor tags
 if !exists('g:gasDisablePreproc') && !exists('b:gasDisablePreproc')
@@ -2072,4 +2069,3 @@ syn sync ccomment
 syn sync linebreaks=1
 
 " vim: ts=8 sw=8 :
-
